@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Our Packages - David Visuals{% endblock %}
+{% block title %}Design Packages - David Visuals{% endblock %}
+
+{% block meta_description %}Browse our design packages with transparent fixed pricing. Logo design, social media
+graphics, and flyer design services starting from €49.{% endblock %}
+
+{% block meta_keywords %}design packages, logo design pricing, social media design, flyer design services, graphic
+design prices{% endblock %}
 
 {% block content %}
 <section class="packages-header">
@@ -14,10 +20,14 @@
 <section class="packages-filter">
     <div class="container">
         <div class="filter-buttons">
-            <a href="{% url 'packages:package_list' %}" class="filter-btn {% if not selected_category %}active{% endif %}">All Packages</a>
-            <a href="?category=logo" class="filter-btn {% if selected_category == 'logo' %}active{% endif %}">Logo Design</a>
-            <a href="?category=social" class="filter-btn {% if selected_category == 'social' %}active{% endif %}">Social Media</a>
-            <a href="?category=flyer" class="filter-btn {% if selected_category == 'flyer' %}active{% endif %}">Flyer/Poster</a>
+            <a href="{% url 'packages:package_list' %}"
+                class="filter-btn {% if not selected_category %}active{% endif %}">All Packages</a>
+            <a href="?category=logo" class="filter-btn {% if selected_category == 'logo' %}active{% endif %}">Logo
+                Design</a>
+            <a href="?category=social" class="filter-btn {% if selected_category == 'social' %}active{% endif %}">Social
+                Media</a>
+            <a href="?category=flyer"
+                class="filter-btn {% if selected_category == 'flyer' %}active{% endif %}">Flyer/Poster</a>
         </div>
     </div>
 </section>
@@ -25,24 +35,24 @@
 <section class="packages-list">
     <div class="container">
         {% if packages %}
-            <div class="packages-grid">
-                {% for package in packages %}
-                    <div class="package-card">
-                        {% if package.image %}
-                            <img src="{{ package.image.url }}" alt="{{ package.name }}">
-                        {% endif %}
-                        <div class="package-card-content">
-                            <span class="package-category">{{ package.get_category_display }}</span>
-                            <h3>{{ package.name }}</h3>
-                            <p class="package-price">€{{ package.price }}</p>
-                            <p class="package-description">{{ package.description|truncatewords:20 }}</p>
-                            <a href="{% url 'packages:package_detail' package.pk %}" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                {% endfor %}
+        <div class="packages-grid">
+            {% for package in packages %}
+            <div class="package-card">
+                {% if package.image %}
+                <img src="{{ package.image.url }}" alt="{{ package.name }}">
+                {% endif %}
+                <div class="package-card-content">
+                    <span class="package-category">{{ package.get_category_display }}</span>
+                    <h3>{{ package.name }}</h3>
+                    <p class="package-price">€{{ package.price }}</p>
+                    <p class="package-description">{{ package.description|truncatewords:20 }}</p>
+                    <a href="{% url 'packages:package_detail' package.pk %}" class="btn btn-primary">View Details</a>
+                </div>
             </div>
+            {% endfor %}
+        </div>
         {% else %}
-            <p class="no-packages">No packages available at the moment. Check back soon!</p>
+        <p class="no-packages">No packages available at the moment. Check back soon!</p>
         {% endif %}
     </div>
 </section>

@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ package.name }} - David Visuals{% endblock %}
+{% block title %}{{ package.name }} - €{{ package.price }} - David Visuals{% endblock %}
+
+{% block meta_description %}{{ package.description|truncatewords:30 }} Price: €{{ package.price }}. Delivery: {{ package.delivery_time }}.{% endblock %}
+
+{% block meta_keywords %}{{ package.name }}, {{ package.get_category_display }}, graphic design, design service{% endblock %}
 
 {% block content %}
 <section class="package-detail">
