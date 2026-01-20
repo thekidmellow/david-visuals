@@ -42,7 +42,7 @@
                 <h2>Payment Details</h2>
                 <p>Complete your purchase securely with Stripe.</p>
 
-                <form id="payment-form" method="POST" action="#">
+                <form id="payment-form" method="POST" action="{% url 'orders:create_checkout_session' package.id %}">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-primary btn-full">
                         Pay €{{ package.price }} with Stripe

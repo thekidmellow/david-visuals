@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Payment Cancelled - David Visuals{% endblock %}
+
+{% block content %}
+<section class="cancel-page">
+    <div class="container">
+        <div class="cancel-message">
+            <h1>Payment Cancelled</h1>
+            <p>Your payment was cancelled and no charges were made.</p>
+
+            <div class="action-buttons">
+                <a href="{% url 'packages:package_list' %}" class="btn btn-primary">Browse Packages</a>
+                <a href="/" class="btn btn-secondary">Return Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
