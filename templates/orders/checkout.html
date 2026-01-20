@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Checkout - {{ package.name }} - David Visuals{% endblock %}
+
+{% block content %}
+<section class="checkout-page">
+    <div class="container">
+        <h1>Checkout</h1>
+
+        <div class="checkout-grid">
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-card">
+                    <h3>{{ package.name }}</h3>
+                    <p class="package-category">{{ package.get_category_display }}</p>
+                    <p class="package-description">{{ package.description }}</p>
+
+                    <div class="package-details">
+                        <div class="detail-item">
+                            <strong>Delivery Time:</strong> {{ package.delivery_time }}
+                        </div>
+                        <div class="detail-item">
+                            <strong>Revisions:</strong> {{ package.revisions }}
+                        </div>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Package Price:</span>
+                            <span>€{{ package.price }}</span>
+                        </div>
+                        <div class="price-row total">
+                            <strong>Total:</strong>
+                            <strong>€{{ package.price }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-form">
+                <h2>Payment Details</h2>
+                <p>Complete your purchase securely with Stripe.</p>
+
+                <form id="payment-form" method="POST" action="#">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Pay €{{ package.price }} with Stripe
+                    </button>
+                </form>
+
+                <div class="payment-info">
+                    <p>Your payment is processed securely by Stripe. We never store your card details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
