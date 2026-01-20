@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from .models import Hero
 
-# Create your views here.
+
+def index(request):
+    hero = Hero.objects.filter(is_active=True).first()
+    context = {
+        'hero': hero,
+    }
+    return render(request, 'home/index.html', context)

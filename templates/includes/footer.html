@@ -9,7 +9,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="{% url 'packages:package_list' %}">Packages</a></li>
+                    <li><a href="#">Packages</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -19,15 +19,18 @@
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
-                <form method="POST" action="{% url 'newsletter:subscribe' %}" class="newsletter-form">
+                <form method="POST" action="#" class="newsletter-form">
                     {% csrf_token %}
                     <input type="email" name="email" placeholder="Your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 David Visuals. All rights reserved.</p>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Packages</a></li>
+            </ul>
         </div>
-    </div>
 </footer>
