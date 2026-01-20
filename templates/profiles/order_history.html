@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order History - David Visuals{% endblock %}
+
+{% block content %}
+<section class="order-history-page">
+    <div class="container">
+        <h1>Order History</h1>
+
+        {% if orders %}
+        <div class="orders-list">
+            {% for order in orders %}
+            <div class="order-card">
+                <div class="order-header">
+                    <h3>Order #{{ order.order_number }}</h3>
+                    <span class="order-status status-{{ order.status }}">{{ order.get_status_display }}</span>
+                </div>
+
+                <div class="order-details">
+                    <div class="detail-row">
+                        <strong>Package:</strong> {{ order.package.name }}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Category:</strong> {{ order.package.get_category_display }}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Amount:</strong> €{{ order.total }}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Order Date:</strong> {{ order.created_at|date:"F d, Y" }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-orders">
+            <p>You haven't placed any orders yet.</p>
+            <a href="{% url 'packages:package_list' %}" class="btn btn-primary">Browse Packages</a>
+        </div>
+        {% endif %}
+
+        <div class="back-link">
+            <a href="{% url 'profile' %}" class="btn btn-secondary">Back to Profile</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

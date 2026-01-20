@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
+from orders.models import Order
 
 
 @login_required
@@ -23,3 +24,13 @@ def profile(request):
         'profile': profile,
     }
     return render(request, 'profiles/profile.html', context)
+
+
+@login_required
+def order_history(request):
+    orders = Order.objects.filter(user=request.user).select_related('package')
+    
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'profiles/order_history.html', context)
