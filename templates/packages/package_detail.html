@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ package.name }} - David Visuals{% endblock %}
+
+{% block content %}
+<section class="package-detail">
+    <div class="container">
+        <div class="package-detail-grid">
+            <div class="package-detail-image">
+                {% if package.image %}
+                    <img src="{{ package.image.url }}" alt="{{ package.name }}">
+                {% else %}
+                    <div class="package-placeholder">
+                        <p>{{ package.get_category_display }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="package-detail-info">
+                <span class="package-category">{{ package.get_category_display }}</span>
+                <h1>{{ package.name }}</h1>
+                <p class="package-price">€{{ package.price }}</p>
+                <p class="package-description">{{ package.description }}</p>
+                
+                <div class="package-meta">
+                    <div class="meta-item">
+                        <strong>Delivery Time:</strong> {{ package.delivery_time }}
+                    </div>
+                    <div class="meta-item">
+                        <strong>Revisions:</strong> {{ package.revisions }}
+                    </div>
+                </div>
+
+                <div class="package-features">
+                    <h3>What's Included:</h3>
+                    <ul>
+                        {% for feature in package.get_features_list %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                {% if user.is_authenticated %}
+                    <a href="#" class="btn btn-primary btn-large">Purchase Now</a>
+                {% else %}
+                    <a href="#" class="btn btn-primary btn-large">Login to Purchase</a>
+                {% endif %}
+                
+                <a href="{% url 'packages:package_list' %}" class="btn btn-secondary">Back to Packages</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
