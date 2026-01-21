@@ -482,6 +482,138 @@ footer {
   border-bottom: none;
 }
 
+.package-detail-section {
+  padding: 2rem 0;
+}
+
+.package-detail-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.package-detail-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.package-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.package-detail-body {
+  padding: 2rem 3rem 3rem;
+}
+
+.package-detail-category {
+  color: #888;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.package-detail-title {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.package-detail-price {
+  color: #3498db;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.package-detail-description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.package-meta {
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+.package-features-section {
+  margin-bottom: 2rem;
+}
+
+.package-features-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.package-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.package-features-list li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  position: relative;
+}
+
+.package-features-list li:before {
+  content: "✓";
+  color: #27ae60;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.package-features-list li:last-child {
+  border-bottom: none;
+}
+
+.package-detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .package-detail-body {
+    padding: 1.5rem;
+  }
+
+  .package-detail-title {
+    font-size: 1.5rem;
+  }
+
+  .package-detail-price {
+    font-size: 2rem;
+  }
+
+  .package-detail-actions {
+    flex-direction: column;
+  }
+}
+
 .package-actions {
   display: flex;
   gap: 1rem;

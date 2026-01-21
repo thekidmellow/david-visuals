@@ -8,23 +8,19 @@
 {% block meta_keywords %}{{ package.name }}, {{ package.get_category_display }}, graphic design, design service{% endblock %}
 
 {% block content %}
-<section class="package-detail">
+<section class="package-detail-section">
     <div class="container">
-        <div class="package-detail-grid">
+        <div class="package-detail-card">
+            {% if package.image %}
             <div class="package-detail-image">
-                {% if package.image %}
                 <img src="{{ package.image.url }}" alt="{{ package.name }}">
-                {% else %}
-                <div class="package-placeholder">
-                    <p>{{ package.get_category_display }}</p>
-                </div>
-                {% endif %}
             </div>
-            <div class="package-detail-info">
-                <span class="package-category">{{ package.get_category_display }}</span>
-                <h1>{{ package.name }}</h1>
-                <p class="package-price">€{{ package.price }}</p>
-                <p class="package-description">{{ package.description }}</p>
+            {% endif %}
+            <div class="package-detail-body">
+                <span class="package-detail-category">{{ package.get_category_display }}</span>
+                <h1 class="package-detail-title">{{ package.name }}</h1>
+                <p class="package-detail-price">€{{ package.price }}</p>
+                <p class="package-detail-description">{{ package.description }}</p>
 
                 <div class="package-meta">
                     <div class="meta-item">
@@ -35,23 +31,27 @@
                     </div>
                 </div>
 
-                <div class="package-features">
+                {% if package.get_features_list %}
+                <div class="package-features-section">
                     <h3>What's Included:</h3>
-                    <ul>
+                    <ul class="package-features-list">
                         {% for feature in package.get_features_list %}
+                        {% if feature.strip %}
                         <li>{{ feature }}</li>
+                        {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
-
-                {% if user.is_authenticated %}
-                <a href="{% url 'orders:checkout' package.pk %}" class="btn btn-primary btn-large">Purchase Now</a>
-                {% else %}
-                <a href="{% url 'account_login' %}?next={% url 'packages:package_detail' package.pk %}"
-                    class="btn btn-primary btn-large">Login to Purchase</a>
                 {% endif %}
 
-                <a href="{% url 'packages:package_list' %}" class="btn btn-secondary">Back to Packages</a>
+                <div class="package-detail-actions">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'orders:checkout' package.pk %}" class="btn btn-primary btn-large">Purchase Now</a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}?next={% url 'packages:package_detail' package.pk %}" class="btn btn-primary btn-large">Login to Purchase</a>
+                    {% endif %}
+                    <a href="{% url 'packages:package_list' %}" class="btn btn-secondary">Back to Packages</a>
+                </div>
             </div>
         </div>
     </div>
