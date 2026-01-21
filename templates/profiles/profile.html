@@ -6,59 +6,76 @@
 {% block content %}
 <section class="profile-page">
     <div class="container">
-        <h1>My Profile</h1>
+        <div class="profile-header">
+            <h1>My Profile</h1>
+        </div>
 
         <div class="profile-grid">
-            <div class="profile-info">
-                <h2>Account Information</h2>
-                <div class="info-item">
-                    <strong>Username:</strong> {{ user.username }}
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h2>Account Information</h2>
                 </div>
-                <div class="info-item">
-                    <strong>Email:</strong> {{ user.email }}
-                </div>
-                <div class="info-item">
-                    <strong>Member since:</strong> {{ user.date_joined|date:"F d, Y" }}
+                <div class="profile-card-body">
+                    <div class="info-item">
+                        <span class="info-label">Username</span>
+                        <span class="info-value">{{ user.username }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">{{ user.email }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Member since</span>
+                        <span class="info-value">{{ user.date_joined|date:"F d, Y" }}</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="profile-form">
-                <h2>Update Profile Details</h2>
-                <form method="POST" class="auth-form">
-                    {% csrf_token %}
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h2>Update Profile Details</h2>
+                </div>
+                <div class="profile-card-body">
+                    <form method="POST">
+                        {% csrf_token %}
 
-                    <div class="form-group">
-                        <label for="id_phone">Phone</label>
-                        {{ form.phone }}
-                    </div>
+                        <div class="form-group">
+                            <label for="id_phone">Phone</label>
+                            <input type="text" name="phone" id="id_phone" class="form-control" placeholder="Your phone number" value="{{ form.phone.value|default:'' }}">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="id_address_line1">Address Line 1</label>
-                        {{ form.address_line1 }}
-                    </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_address_line1">Address Line 1</label>
+                                <input type="text" name="address_line1" id="id_address_line1" class="form-control" placeholder="Street address" value="{{ form.address_line1.value|default:'' }}">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="id_address_line2">Address Line 2</label>
-                        {{ form.address_line2 }}
-                    </div>
+                            <div class="form-group">
+                                <label for="id_address_line2">Address Line 2</label>
+                                <input type="text" name="address_line2" id="id_address_line2" class="form-control" placeholder="Apartment, suite, etc." value="{{ form.address_line2.value|default:'' }}">
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="id_city">City</label>
-                        {{ form.city }}
-                    </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_city">City</label>
+                                <input type="text" name="city" id="id_city" class="form-control" placeholder="City" value="{{ form.city.value|default:'' }}">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="id_country">Country</label>
-                        {{ form.country }}
-                    </div>
+                            <div class="form-group">
+                                <label for="id_country">Country</label>
+                                <input type="text" name="country" id="id_country" class="form-control" placeholder="Country" value="{{ form.country.value|default:'' }}">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="id_postal_code">Postal Code</label>
-                        {{ form.postal_code }}
-                    </div>
+                            <div class="form-group">
+                                <label for="id_postal_code">Postal Code</label>
+                                <input type="text" name="postal_code" id="id_postal_code" class="form-control" placeholder="Postal code" value="{{ form.postal_code.value|default:'' }}">
+                            </div>
+                        </div>
 
-                    <button type="submit" class="btn btn-primary">Update Profile</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
