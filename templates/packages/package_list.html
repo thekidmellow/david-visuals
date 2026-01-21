@@ -39,12 +39,14 @@ design prices{% endblock %}
             {% for package in packages %}
             <div class="package-card">
                 {% if package.image %}
-                <img src="{{ package.image.url }}" alt="{{ package.name }}">
+                <div class="package-card-image">
+                    <img src="{{ package.image.url }}" alt="{{ package.name }}">
+                </div>
                 {% endif %}
-                <div class="package-card-content">
-                    <span class="package-category">{{ package.get_category_display }}</span>
-                    <h3>{{ package.name }}</h3>
-                    <p class="package-price">€{{ package.price }}</p>
+                <div class="package-card-body">
+                    <span class="package-card-category">{{ package.get_category_display }}</span>
+                    <h3 class="package-card-title">{{ package.name }}</h3>
+                    <p class="package-card-price">€{{ package.price }}</p>
                     <p class="package-description">{{ package.description|truncatewords:20 }}</p>
                     <a href="{% url 'packages:package_detail' package.pk %}" class="btn btn-primary">View Details</a>
                 </div>
