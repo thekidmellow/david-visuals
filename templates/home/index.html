@@ -3,56 +3,46 @@
 
 {% block title %}David Visuals - Professional Graphic Design Services{% endblock %}
 
-{% block meta_description %}Get professional graphic design services at transparent fixed prices. Logos from €49, social
-media graphics from €59, and flyers from €79. Fast delivery guaranteed.{% endblock %}
+{% block meta_description %}Get professional graphic design services at transparent fixed prices. Logos from €49, social media graphics from €59, and flyers from €79. Fast delivery guaranteed.{% endblock %}
 
-{% block meta_keywords %}graphic design services, affordable logo design, social media graphics, flyer design, poster
-design, branding services, fixed price design{% endblock %}
+{% block meta_keywords %}graphic design services, affordable logo design, social media graphics, flyer design, poster design, branding services, fixed price design{% endblock %}
 
 {% block content %}
 <section class="hero">
-    <div class="container">
-        {% if hero %}
-        <div class="hero-content">
-            <h1>{{ hero.title }}</h1>
-            <h2>{{ hero.subtitle }}</h2>
-            <p>{{ hero.description }}</p>
-            <a href="{{ hero.cta_link }}" class="btn btn-primary">{{ hero.cta_text }}</a>
-        </div>
-        {% if hero.image %}
-        <div class="hero-image">
-            <img src="{{ hero.image.url }}" alt="{{ hero.title }}">
-        </div>
-        {% endif %}
-        {% else %}
-        <div class="hero-content">
-            <h1>Welcome to David Visuals</h1>
-            <h2>Professional Graphic Design Services</h2>
-            <p>Quality designs at transparent, fixed prices. From logos to social media graphics and promotional
-                materials.</p>
-            <a href="/packages/" class="btn btn-primary">View Packages</a>
-        </div>
-        {% endif %}
-    </div>
+    {% if hero %}
+    <h1>{{ hero.title }}</h1>
+    <h2>{{ hero.subtitle }}</h2>
+    <p>{{ hero.description }}</p>
+    <a href="{{ hero.cta_link }}" class="btn btn-primary">{{ hero.cta_text }}</a>
+    {% else %}
+    <h1>Transform Your Brand</h1>
+    <h2>Professional Design Services</h2>
+    <p>Get stunning graphic designs at fixed, transparent prices. Quality work delivered fast.</p>
+    <a href="{% url 'packages:package_list' %}" class="btn btn-primary">View Packages</a>
+    {% endif %}
 </section>
 
 <section class="features">
-    <div class="container">
-        <h2>Why Choose David Visuals?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Fixed Prices</h3>
-                <p>Transparent pricing with no hidden costs. Know exactly what you pay upfront.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Fast Delivery</h3>
-                <p>Quick turnaround times without compromising on quality.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Professional Quality</h3>
-                <p>High-quality designs crafted by experienced designers.</p>
-            </div>
+    <h2>Why Choose David Visuals?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Fixed Prices</h3>
+            <p>Transparent pricing with no hidden costs. Know exactly what you pay upfront.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Fast Delivery</h3>
+            <p>Quick turnaround times without compromising on quality.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Professional Quality</h3>
+            <p>High-quality designs crafted by experienced designers.</p>
         </div>
     </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to Get Started?</h2>
+    <p>Choose from our fixed-price packages and transform your brand today.</p>
+    <a href="{% url 'packages:package_list' %}" class="btn btn-primary">Browse Packages</a>
 </section>
 {% endblock %}
