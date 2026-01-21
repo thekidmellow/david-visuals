@@ -1,0 +1,1 @@
+web: gunicorn david_visuals_project.wsgi
