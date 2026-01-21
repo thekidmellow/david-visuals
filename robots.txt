@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /accounts/
+Disallow: /profile/
+Disallow: /orders/
+Allow: /
+
+Sitemap: https://your-app-name.herokuapp.com/sitemap.xml
