@@ -1113,7 +1113,51 @@ input[type="checkbox"] {
   margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
+.packages-header {
+  margin-bottom: 1rem;
+}
+
+.packages-header h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.packages-header p {
+  color: #666;
+}
+
+.packages-filter {
+  margin-bottom: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  background-color: #fff;
+  color: #2c3e50;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.filter-btn.active {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}
 
 @media (max-width: 768px) {
   .nav-links {
