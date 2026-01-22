@@ -1241,3 +1241,9 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 }
+
+.logout-text {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666;
+}

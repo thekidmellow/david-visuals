@@ -4,21 +4,17 @@
 {% block title %}Logout - David Visuals{% endblock %}
 
 {% block content %}
-<section class="auth-page">
-    <div class="container">
-        <div class="auth-form-wrapper">
-            <h1>Logout</h1>
-            <p>Are you sure you want to logout?</p>
+<div class="form-container">
+    <h1>Logout</h1>
+    <p class="logout-text">Are you sure you want to logout?</p>
 
-            <form method="POST" action="{% url 'account_logout' %}" class="auth-form">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary btn-full">Logout</button>
-            </form>
+    <form method="POST" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary btn-full">Logout</button>
+    </form>
 
-            <div class="auth-links">
-                <p><a href="/">Return to Homepage</a></p>
-            </div>
-        </div>
+    <div class="form-links">
+        <a href="{% url 'home' %}">Return to Homepage</a>
     </div>
-</section>
+</div>
 {% endblock %}
