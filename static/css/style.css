@@ -90,7 +90,7 @@ footer {
   padding: 0;
 }
 
-.footer-section h2 {
+.footer-section h3 {
   margin-bottom: 1rem;
   color: #3498db;
   font-size: 1.5rem;
@@ -161,6 +161,12 @@ footer {
   padding-top: 2rem;
   border-top: 1px solid #34495e;
   color: #bdc3c7;
+}
+
+.footer-brand {
+  margin-bottom: 1rem;
+  color: #3498db;
+  font-size: 1.5rem;
 }
 
 .btn {
