@@ -1289,3 +1289,37 @@ input[type="checkbox"] {
   margin: 0.5rem 0;
   color: #2c3e50;
 }
+
+.error-page-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-icon {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #3498db;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.error-page-container h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
