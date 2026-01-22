@@ -4,54 +4,48 @@
 {% block title %}Sign Up - David Visuals{% endblock %}
 
 {% block content %}
-<section class="auth-page">
-    <div class="container">
-        <div class="auth-form-wrapper">
-            <h1>Sign Up</h1>
-            <p>Create your account to start purchasing design packages.</p>
+<div class="form-container">
+    <h1>Sign Up</h1>
+    <p class="form-intro">Create your account to start purchasing design packages.</p>
 
-            <form method="POST" action="{% url 'account_signup' %}" class="auth-form">
-                {% csrf_token %}
+    <form method="POST" action="{% url 'account_signup' %}">
+        {% csrf_token %}
 
-                <div class="form-group">
-                    <label for="id_username">Username</label>
-                    <input type="text" name="username" id="id_username" placeholder="Choose a username" required
-                        minlength="4">
-                </div>
-
-                <div class="form-group">
-                    <label for="id_email">Email</label>
-                    <input type="email" name="email" id="id_email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="id_password1">Password</label>
-                    <input type="password" name="password1" id="id_password1" placeholder="Create a password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="id_password2">Confirm Password</label>
-                    <input type="password" name="password2" id="id_password2" placeholder="Confirm your password"
-                        required>
-                </div>
-
-                {% if form.errors %}
-                <div class="error-message">
-                    {% for field, errors in form.errors.items %}
-                    {% for error in errors %}
-                    <p>{{ error }}</p>
-                    {% endfor %}
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
-            </form>
-
-            <div class="auth-links">
-                <p>Already have an account? <a href="{% url 'account_login' %}">Login</a></p>
-            </div>
+        <div class="form-group">
+            <label for="id_username">Username</label>
+            <input type="text" name="username" id="id_username" class="form-control" placeholder="Choose a username" required minlength="4">
         </div>
+
+        <div class="form-group">
+            <label for="id_email">Email</label>
+            <input type="email" name="email" id="id_email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_password1">Password</label>
+            <input type="password" name="password1" id="id_password1" class="form-control" placeholder="Create a password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_password2">Confirm Password</label>
+            <input type="password" name="password2" id="id_password2" class="form-control" placeholder="Confirm your password" required>
+        </div>
+
+        {% if form.errors %}
+        <div class="alert alert-error">
+            {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+    </form>
+
+    <div class="form-links">
+        <p>Already have an account? <a href="{% url 'account_login' %}">Login</a></p>
     </div>
-</section>
+</div>
 {% endblock %}
