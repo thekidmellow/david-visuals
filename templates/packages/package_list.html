@@ -18,6 +18,7 @@ design prices{% endblock %}
 </section>
 
 <section class="packages-filter">
+    <h2 class="sr-only">Filter packages</h2>
     <div class="container">
         <div class="filter-buttons">
             <a href="{% url 'packages:package_list' %}"
@@ -45,7 +46,7 @@ design prices{% endblock %}
                 {% endif %}
                 <div class="package-card-body">
                     <span class="package-card-category">{{ package.get_category_display }}</span>
-                    <h3 class="package-card-title">{{ package.name }}</h3>
+                    <h2 class="package-card-title">{{ package.name }}</h2>
                     <p class="package-card-price">€{{ package.price }}</p>
                     <p class="package-description">{{ package.description|truncatewords:20 }}</p>
                     <a href="{% url 'packages:package_detail' package.pk %}" class="btn btn-primary">View Details</a>
