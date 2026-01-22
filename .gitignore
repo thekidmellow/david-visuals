@@ -7,7 +7,6 @@ env/
 .env
 .DS_Store
 *.log
-staticfiles/
 media/
 *.pot
 *.mo
