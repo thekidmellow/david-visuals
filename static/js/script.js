@@ -68,17 +68,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const navToggle = document.querySelector('.nav-toggle');
-    if (navToggle) {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (navToggle && navLinks) {
         navToggle.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
+            navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!navToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         });
     }
 
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '↑';
     backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
     backToTop.style.display = 'none';
     document.body.appendChild(backToTop);
 
