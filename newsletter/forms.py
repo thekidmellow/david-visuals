@@ -7,5 +7,7 @@ class SubscriberForm(forms.ModelForm):
         model = Subscriber
         fields = ['email']
         widgets = {
-            'email': forms.EmailInput(attrs={'placeholder': 'Your email', 'required': True}),
+            'email': forms.EmailInput(
+                attrs={'placeholder': 'Your email', 'required': True}
+            ),
         }

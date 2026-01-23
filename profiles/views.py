@@ -9,7 +9,7 @@ from orders.models import Order
 @login_required
 def profile(request):
     profile = request.user.profile
-    
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -18,7 +18,7 @@ def profile(request):
             return redirect('/profile/')
     else:
         form = UserProfileForm(instance=profile)
-    
+
     context = {
         'form': form,
         'profile': profile,
@@ -29,7 +29,7 @@ def profile(request):
 @login_required
 def order_history(request):
     orders = Order.objects.filter(user=request.user).select_related('package')
-    
+
     context = {
         'orders': orders,
     }

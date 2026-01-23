@@ -5,10 +5,10 @@ from .models import Package
 def package_list(request):
     packages = Package.objects.filter(is_active=True)
     category = request.GET.get('category')
-    
+
     if category:
         packages = packages.filter(category=category)
-    
+
     context = {
         'packages': packages,
         'selected_category': category,

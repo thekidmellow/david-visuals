@@ -12,7 +12,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 @login_required
 def checkout(request, package_id):
     package = get_object_or_404(Package, pk=package_id, is_active=True)
-    
+
     context = {
         'package': package,
         'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
@@ -23,7 +23,7 @@ def checkout(request, package_id):
 @login_required
 def create_checkout_session(request, package_id):
     package = get_object_or_404(Package, pk=package_id, is_active=True)
-    
+
     try:
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
@@ -39,7 +39,9 @@ def create_checkout_session(request, package_id):
                 'quantity': 1,
             }],
             mode='payment',
-            success_url=request.build_absolute_uri(reverse('orders:success')) + '?session_id={CHECKOUT_SESSION_ID}',
+            success_url=request.build_absolute_uri(
+                reverse('orders:success')
+            ) + '?session_id={CHECKOUT_SESSION_ID}',
             cancel_url=request.build_absolute_uri(reverse('orders:cancel')),
             client_reference_id=package_id,
             metadata={
@@ -73,7 +75,11 @@ def success(request):
                 status='completed'
             )
 
-            messages.success(request, f'Payment successful! Your order number is {order.order_number}')
+            messages.success(
+                request,
+                f'Payment successful! '
+                f'Your order number is {order.order_number}'
+            )
             context = {
                 'order': order,
                 'package': package,
@@ -81,7 +87,9 @@ def success(request):
             return render(request, 'orders/success.html', context)
         except Exception as e:
             print(f"Success page error: {str(e)}")
-            messages.error(request, 'There was an error processing your order.')
+            messages.error(
+                request, 'There was an error processing your order.'
+            )
             return redirect('packages:package_list')
 
     return redirect('packages:package_list')
