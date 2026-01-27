@@ -150,7 +150,7 @@ The application uses PostgreSQL with the following entity relationship diagram:
 
 This project was developed using Agile methodology with GitHub Projects for task management:
 
-![GitHub Project Board](static/images/PAGES/Agile.png)
+![GitHub Project Board](static/images/PAGES/agile.png)
 
 ### User Stories Completed:
 
