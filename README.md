@@ -1,5 +1,6 @@
 # David Visuals
 
+
 ![HTML5](https://img.shields.io/badge/HTML5-Valid-orange)
 ![CSS3](https://img.shields.io/badge/CSS3-Valid-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
@@ -19,6 +20,8 @@ Professional graphic design services platform with fixed pricing and secure Stri
 ## 📋 Table of Contents
 
 - [Features](#features)
+- [User Experience (UX) & Design Rationale](#user-experience-ux--design-rationale)
+- [E-commerce Business Model](#e-commerce-business-model)
 - [Database Schema](#database-schema)
 - [Agile Methodology](#agile-methodology)
 - [Wireframes](#wireframes)
@@ -43,6 +46,8 @@ Professional graphic design services platform with fixed pricing and secure Stri
 - **Responsive Design**: Mobile-first design that works on all devices
 - **Custom 404 Page**: User-friendly error page with navigation options
 
+---
+
 ## 🎨 User Experience (UX) & Design Rationale
 
 The user experience of David Visuals was designed to prioritise clarity, trust, and ease of purchase for users seeking professional graphic design services.
@@ -53,6 +58,43 @@ Navigation is consistent throughout the site, allowing users to move seamlessly 
 
 Accessibility considerations include clear visual hierarchy, readable typography, sufficient colour contrast, and intuitive form layouts to support a wide range of users.
 
+### Colour Scheme
+
+The colour scheme was carefully chosen to reflect a professional design services brand while maintaining excellent readability:
+
+| Colour | Hex Code | Usage |
+|--------|----------|-------|
+| Dark Navy | `#2c3e50` | Header, footer, headings |
+| Primary Blue | `#3498db` | Buttons, links, accents |
+| Purple Gradient | `#667eea` to `#764ba2` | Hero section, profile cards |
+| Light Grey | `#f4f4f4` | Background |
+| White | `#ffffff` | Cards, content blocks |
+| Dark Text | `#333` | Body text |
+| Success Green | `#27ae60` | Success messages |
+| Error Red | `#e74c3c` | Error messages |
+
+### Typography
+
+The website uses clean, modern system fonts for optimal readability and performance:
+
+- **Primary Font**: `"Segoe UI", Tahoma, Geneva, Verdana, sans-serif`
+- **Font Awesome** icons for visual elements (navigation, features, status indicators)
+
+---
+
+## 💼 E-commerce Business Model
+
+David Visuals operates using a **B2C (Business-to-Consumer) fixed-price e-commerce model**.
+
+Customers can browse pre-defined graphic design service packages with transparent, fixed pricing and complete purchases securely using Stripe Checkout. Revenue is generated through one-time payments for design services.
+
+Marketing strategies include:
+- A dedicated Facebook Business Page to reach potential customers
+- A newsletter subscription feature to retain users and promote updates
+
+This model prioritises clarity, trust, and ease of purchase for users seeking professional graphic design services.
+
+---
 
 ### Site Pages
 
@@ -397,7 +439,6 @@ DATABASE_URL=postgresql://user:password@localhost/dbname
 ALLOWED_HOSTS=127.0.0.1,localhost
 STRIPE_PUBLIC_KEY=pk_test_your_key_here
 STRIPE_SECRET_KEY=sk_test_your_key_here
-STRIPE_WEBHOOK_SECRET=whsec_your_secret_here
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
@@ -440,7 +481,7 @@ The application is deployed on Heroku. For detailed deployment instructions, see
 3. Set environment variables
 4. Deploy via Git
 5. Run migrations
-6. Configure Stripe webhooks
+6. Create superuser
 
 **Live Site:** [https://david-visuals-9e85de42044d.herokuapp.com](https://david-visuals-9e85de42044d.herokuapp.com)
 

@@ -1,6 +1,10 @@
 # Testing
 
+Testing for this project was conducted primarily through **manual testing and validation tools**, in line with the scope of the project and learning outcomes. Automated test suites and continuous integration pipelines were not implemented.
+
 This document outlines the testing procedures and results for the David Visuals e-commerce platform.
+
+---
 
 ## Table of Contents
 
@@ -50,13 +54,7 @@ All HTML pages were validated using the [W3C Markup Validation Service](https://
 | Checkout | Pass - No errors or warnings | ![HTML Checkout](static/images/VALIDATIONS/W3CVALIDATOR_Checkoutpage.png) |
 | 404 | Pass - No errors or warnings | ![HTML 404](static/images/VALIDATIONS/W3CVALIDATOR_404page.png) |
 
-### Security Configuration Testing
 
-Django’s built-in deployment security checks were run using:
-
-python manage.py check --deploy
-
-No security issues were identified, confirming secure production configuration.
 
 ### CSS Validation
 
