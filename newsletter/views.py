@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Subscriber
 from .forms import SubscriberForm
@@ -28,3 +28,29 @@ def subscribe(request):
             messages.error(request, 'Please enter a valid email address.')
 
         return redirect(request.META.get('HTTP_REFERER', '/'))
+
+
+def unsubscribe(request):
+    """Allow users to unsubscribe from the newsletter."""
+    if request.method == 'POST':
+        email = request.POST.get('email')
+
+        if email:
+            try:
+                subscriber = Subscriber.objects.get(email=email)
+                subscriber.delete()
+                messages.success(
+                    request,
+                    'You have been successfully unsubscribed from our newsletter.'
+                )
+            except Subscriber.DoesNotExist:
+                messages.error(
+                    request,
+                    'This email address was not found in our subscriber list.'
+                )
+        else:
+            messages.error(request, 'Please enter a valid email address.')
+
+        return redirect('newsletter:unsubscribe')
+
+    return render(request, 'newsletter/unsubscribe.html')
