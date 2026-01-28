@@ -4,27 +4,23 @@
 {% block title %}Unsubscribe - David Visuals{% endblock %}
 
 {% block content %}
-<main>
-    <div class="container">
-        <div class="form-container">
-            <h1>Unsubscribe from Newsletter</h1>
-            <p class="form-intro">Enter your email address below to unsubscribe from our newsletter.</p>
+<div class="form-container">
+    <h1>Unsubscribe from Newsletter</h1>
+    <p class="form-intro">Enter your email address below to unsubscribe from our newsletter.</p>
 
-            <form method="post" action="{% url 'newsletter:unsubscribe' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-danger btn-full">Unsubscribe</button>
-                </div>
-            </form>
-
-            <div class="form-links">
-                <p>Changed your mind? <a href="{% url 'home:index' %}">Return to Homepage</a></p>
-            </div>
+    <form method="post" action="{% url 'newsletter:unsubscribe' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
         </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-danger btn-full">Unsubscribe</button>
+        </div>
+    </form>
+
+    <div class="form-links">
+        <p>Changed your mind? <a href="{% url 'home:index' %}">Return to Homepage</a></p>
     </div>
-</main>
+</div>
 {% endblock %}

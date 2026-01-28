@@ -152,6 +152,12 @@ Registration page for new users.
 
 ![Sign Up](static/images/PAGES/Signup_page.png)
 
+#### Unsubscribe
+
+Page for users to unsubscribe from Newsletters.
+
+![Unsubscribe](static/images/PAGES/Unsubscribe_page.png)
+
 #### Admin Panel
 
 Django admin interface for managing packages, orders, and users.
@@ -240,6 +246,7 @@ Wireframes were created for both desktop and mobile views to plan the layout and
 | Profile | ![Desktop Profile](static/images/Wireframe/Wireframes_desktop_Profile.png) |
 | Login | ![Desktop Login](static/images/Wireframe/Wireframes_desktop_Login.png) |
 | Sign Up | ![Desktop Signup](static/images/Wireframe/Wireframes_desktop_Signup.png) |
+| Unsubscribe | ![Desktop Unsubscribe](static/images/Wireframe/Wireframes_desktop_Unsubscribe.png) |
 
 ### Mobile Wireframes
 
@@ -252,6 +259,7 @@ Wireframes were created for both desktop and mobile views to plan the layout and
 | Profile | ![Mobile Profile](static/images/Wireframe/Wireframes_Mobile_Profile.png) |
 | Login | ![Mobile Login](static/images/Wireframe/Wireframes_Mobile_Login.png) |
 | Sign Up | ![Mobile Signup](static/images/Wireframe/Wireframes_Mobile_Signup.png) |
+| Unsubscribe | ![Mobile Unsubscribe](static/images/Wireframe/Wireframes_Mobile_Unsubscribe.png) |
 
 ---
 
