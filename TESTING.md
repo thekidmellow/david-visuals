@@ -50,6 +50,7 @@ All HTML pages were validated using the [W3C Markup Validation Service](https://
 | Login | Pass - No errors or warnings | ![HTML Login](static/images/VALIDATIONS/W3CVALIDATOR_Login.png) |
 | Sign Up | Pass - No errors or warnings | ![HTML Signup](static/images/VALIDATIONS/W3CVALIDATOR_Signup.html.png) |
 | Logout | Pass - No errors or warnings | ![HTML Logout](static/images/VALIDATIONS/W3CVALIDATOR_Logoutpage.png) |
+| Unsubscribe | Pass - No errors or warnings | ![HTML Unsubscribe](static/images/VALIDATIONS/W3CVALIDATOR_Unsubscribe.png) |
 | Profile | Pass - No errors or warnings | ![HTML Profile](static/images/VALIDATIONS/W3CVALIDATOR_Profilepage.png) |
 | Checkout | Pass - No errors or warnings | ![HTML Checkout](static/images/VALIDATIONS/W3CVALIDATOR_Checkoutpage.png) |
 | 404 | Pass - No errors or warnings | ![HTML 404](static/images/VALIDATIONS/W3CVALIDATOR_404page.png) |
@@ -100,6 +101,7 @@ Lighthouse audits were performed using Chrome DevTools to assess Performance, Ac
 | Logout | 100 | 93 | 100 | 63 | ![Lighthouse Logout](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Logout.png) |
 | Profile | 99 | 93 | 100 | 63 | ![Lighthouse Profile](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Profile.png) |
 | Checkout | 99 | 93 | 100 | 63 | ![Lighthouse Checkout](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Checkout.png) |
+| Unsubscribe | 99 | 93 | 100 | 100 | ![Lighthouse Unsubscribe](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Unsubscribe.png) |
 | Payment Success | 100 | 93 | 100 | 63 | ![Lighthouse Success](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Payment_successful.png) |
 | Payment Cancelled | 100 | 93 | 100 | 63 | ![Lighthouse Cancelled](static/images/LIGHTHOUSE_AUDIT/Lighthouse_Payment_cancelled_page.png) |
 | 404 | 100 | 93 | 100 | 63 | ![Lighthouse 404](static/images/LIGHTHOUSE_AUDIT/Lighthouse_404_page.png) |
@@ -122,6 +124,7 @@ The website was tested on multiple browsers to ensure consistent functionality a
 | Login | Pass | ![Chrome Login](static/images/Chrome/Chrome_Login_page.png) |
 | Sign Up | Pass | ![Chrome Signup](static/images/Chrome/Chrome_Signup_page.png) |
 | Logout | Pass | ![Chrome Logout](static/images/Chrome/Chrome_Logout_page.png) |
+| Unsubscribe | Pass | ![Chrome Unsubscribe](static/images/Chrome/Chrome_Unsubscribe_page.png) |
 | Profile | Pass | ![Chrome Profile](static/images/Chrome/Chrome_Profile_page.png) |
 | Checkout | Pass | ![Chrome Checkout](static/images/Chrome/Chrome_Checkout_page.png) |
 | Payment Success | Pass | ![Chrome Success](static/images/Chrome/Chrome_Payment_Successful_page.png) |
@@ -138,6 +141,7 @@ The website was tested on multiple browsers to ensure consistent functionality a
 | Login | Pass | ![Firefox Login](static/images/Firefox/Firefox_login_page.png) |
 | Sign Up | Pass | ![Firefox Signup](static/images/Firefox/Firefox_Signup_page.png) |
 | Logout | Pass | ![Firefox Logout](static/images/Firefox/Firefox_Logout_page.png) |
+| Unsubscribe | Pass | ![Firefox Unsubscribe](static/images/Firefox/Firefox_Unsubscribe_page.png) |
 | Profile | Pass | ![Firefox Profile](static/images/Firefox/Firefox_Profile_page.png) |
 | Checkout | Pass | ![Firefox Checkout](static/images/Firefox/Firefox_Checkout_page.png) |
 | Payment Success | Pass | ![Firefox Success](static/images/Firefox/Firefox_Paymentsuccessful_page.png) |
@@ -154,6 +158,7 @@ The website was tested on multiple browsers to ensure consistent functionality a
 | Login | Pass | ![Safari Login](static/images/Safari/Safari_Login_page.png) |
 | Sign Up | Pass | ![Safari Signup](static/images/Safari/Safari_Signup_page.png) |
 | Logout | Pass | ![Safari Logout](static/images/Safari/Safari_Logout_page.png) |
+| Unsubscribe | Pass | ![Safari Unsubscribe](static/images/Safari/Safari_Unsubscribe_page.png) |
 | Profile | Pass | ![Safari Profile](static/images/Safari/Safari_Profile_page.png) |
 | Checkout | Pass | ![Safari Checkout](static/images/Safari/Safari_Checkout_page.png) |
 | Payment Success | Pass | ![Safari Success](static/images/Safari/Safari_Paymentsuccessful_page.png) |
@@ -178,6 +183,7 @@ The website was tested for responsiveness using Chrome DevTools device emulation
 | Login | Pass | ![Mobile Login](static/images/Responsiveness/Mobile_Login_page.png) |
 | Sign Up | Pass | ![Mobile Signup](static/images/Responsiveness/Mobile_Signup_page.png) |
 | Logout | Pass | ![Mobile Logout](static/images/Responsiveness/Mobile_Logout_page.png) |
+| Unsubscribe | Pass | ![Mobile Unsubscribe](static/images/Responsiveness/Mobile_Unsubscribe_page.png) |
 | Profile | Pass | ![Mobile Profile](static/images/Responsiveness/Mobile_Profile_page.png) |
 | Checkout | Pass | ![Mobile Checkout](static/images/Responsiveness/Mobile_Checkout_page.png) |
 | Payment Success | Pass | ![Mobile Success](static/images/Responsiveness/Mobile_Payment_successful_page.png) |
@@ -194,6 +200,7 @@ The website was tested for responsiveness using Chrome DevTools device emulation
 | Login | Pass | ![Tablet Login](static/images/Responsiveness/tablet_Login_page.png) |
 | Sign Up | Pass | ![Tablet Signup](static/images/Responsiveness/tablet_Signup_page.png) |
 | Logout | Pass | ![Tablet Logout](static/images/Responsiveness/tablet_Logout_page.png) |
+| Unsubscribe | Pass | ![Tablet Unsubscribe](static/images/Responsiveness/tablet_Unsubscribe_page.png) |
 | Profile | Pass | ![Tablet Profile](static/images/Responsiveness/tablet_Profile_page.png) |
 | Checkout | Pass | ![Tablet Checkout](static/images/Responsiveness/tablet_Checkout_page.png) |
 | Payment Success | Pass | ![Tablet Success](static/images/Responsiveness/tablet_Payment_successful_page.png) |
