@@ -524,6 +524,19 @@ Comprehensive testing documentation is available in [TESTING.md](TESTING.md).
 
 ---
 
+### Admin Access
+
+For assessment purposes, use the following superuser credentials to access the Django admin panel:
+
+| Field | Value |
+|-------|-------|
+| **URL** | [https://david-visuals-9e85de42044d.herokuapp.com/admin/](https://david-visuals-9e85de42044d.herokuapp.com/admin/) |
+| **Username** | `herokutest1` |
+| **Email** | `heroku@test.com` |
+| **Password** | `testpassh1` |
+
+---
+
 ## 📄 License
 
 This project is for educational purposes as part of Code Institute's Full Stack Software Development program.
