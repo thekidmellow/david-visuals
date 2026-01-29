@@ -270,113 +270,118 @@ david-visuals/
 │
 ├── david_visuals_project/      # Main project directory
 │   ├── __init__.py
+│   ├── asgi.py                 # ASGI configuration
 │   ├── settings.py             # Django settings
 │   ├── urls.py                 # Main URL configuration
-│   ├── wsgi.py                 # WSGI configuration
-│   └── asgi.py                 # ASGI configuration
+│   └── wsgi.py                 # WSGI configuration
 │
 ├── home/                       # Home app
 │   ├── migrations/
-│   ├── templates/
-│   │   └── home/
-│   │       └── index.html      # Homepage
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
-│   ├── views.py                # Homepage & robots.txt views
-│   └── urls.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py                # Homepage view
 │
 ├── packages/                   # Packages app
 │   ├── migrations/
-│   ├── templates/
-│   │   └── packages/
-│   │       ├── package_list.html
-│   │       └── package_detail.html
 │   ├── __init__.py
 │   ├── admin.py                # Package admin configuration
 │   ├── apps.py
 │   ├── models.py               # Package model
-│   ├── views.py                # Package views
-│   └── urls.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py                # Package views
 │
 ├── orders/                     # Orders app
 │   ├── migrations/
-│   ├── templates/
-│   │   └── orders/
-│   │       ├── checkout.html
-│   │       ├── success.html
-│   │       └── cancel.html
 │   ├── __init__.py
 │   ├── admin.py                # Order admin configuration
 │   ├── apps.py
 │   ├── models.py               # Order model
-│   ├── views.py                # Checkout & webhook views
+│   ├── tests.py
 │   ├── urls.py
-│   └── signals.py              # Order number generation
+│   └── views.py                # Checkout views
 │
 ├── profiles/                   # User profiles app
 │   ├── migrations/
-│   ├── templates/
-│   │   └── profiles/
-│   │       └── profile.html
 │   ├── __init__.py
 │   ├── admin.py                # Profile admin configuration
 │   ├── apps.py
+│   ├── forms.py                # Profile update form
 │   ├── models.py               # UserProfile model
-│   ├── views.py                # Profile views
+│   ├── signals.py              # Auto-create profile signal
+│   ├── tests.py
 │   ├── urls.py
-│   └── signals.py              # Auto-create profile on user registration
+│   └── views.py                # Profile views
 │
 ├── newsletter/                 # Newsletter app
 │   ├── migrations/
+│   ├── templates/
+│   │   └── newsletter/
+│   │       └── unsubscribe.html
 │   ├── __init__.py
 │   ├── admin.py                # Subscriber admin configuration
 │   ├── apps.py
+│   ├── forms.py                # Subscriber form
 │   ├── models.py               # Subscriber model
-│   ├── views.py                # Newsletter subscription view
-│   └── urls.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py                # Subscribe/unsubscribe views
 │
 ├── templates/                  # Global templates
-│   ├── base.html               # Base template with nav & footer
+│   ├── account/                # Authentication templates
+│   │   ├── login.html
+│   │   ├── logout.html
+│   │   └── signup.html
+│   ├── home/
+│   │   └── index.html          # Homepage
+│   ├── includes/
+│   │   ├── footer.html         # Footer partial
+│   │   └── navbar.html         # Navigation partial
+│   ├── orders/
+│   │   ├── cancel.html         # Payment cancelled
+│   │   ├── checkout.html       # Checkout page
+│   │   └── success.html        # Payment success
+│   ├── packages/
+│   │   ├── package_detail.html # Package detail page
+│   │   └── package_list.html   # Package list page
+│   ├── profiles/
+│   │   ├── order_history.html  # Order history
+│   │   └── profile.html        # User profile page
 │   ├── 404.html                # Custom 404 page
-│   └── allauth/                # Authentication templates
-│       └── account/
-│           ├── login.html
-│           ├── signup.html
-│           └── logout.html
+│   └── base.html               # Base template
 │
 ├── static/                     # Static files
 │   ├── css/
 │   │   └── style.css           # Main stylesheet
 │   ├── js/
 │   │   └── script.js           # JavaScript functionality
-│   └── images/                 # All documentation images
+│   └── images/                 # All images
 │       ├── erd.png             # Database ERD diagram
-│       ├── PAGES/              # Site page screenshots
-│       ├── VALIDATIONS/        # Code validation screenshots
-│       ├── Responsiveness/     # Mobile & tablet screenshots
-│       ├── LIGHTHOUSE_AUDIT/   # Lighthouse audit screenshots
+│       ├── favicon-32x32.png   # Favicon
 │       ├── Chrome/             # Chrome browser screenshots
 │       ├── Firefox/            # Firefox browser screenshots
 │       ├── Safari/             # Safari browser screenshots
+│       ├── LIGHTHOUSE_AUDIT/   # Lighthouse audit screenshots
+│       ├── PAGES/              # Site page screenshots
+│       ├── Responsiveness/     # Mobile & tablet screenshots
+│       ├── VALIDATIONS/        # Code validation screenshots
 │       └── Wireframe/          # Wireframe images
 │
-├── staticfiles/                # Collected static files (production)
-├── media/                      # User uploaded files (local dev)
-│
 ├── .env                        # Environment variables (not in repo)
-├── .env.example                # Environment variables template
-├── .gitignore                  # Git ignore file
-├── requirements.txt            # Python dependencies
-├── Procfile                    # Heroku process file
-├── runtime.txt                 # Python version for Heroku
-├── sitemaps.py                 # SEO sitemap configuration
-├── robots.txt                  # SEO robots.txt reference
+├── db.sqlite3                  # SQLite database (local dev)
+├── erd.png                     # Database ERD diagram
 ├── manage.py                   # Django management script
-├── README.md                   # This file
+├── Procfile                    # Heroku process file
+├── README.md                   # Project documentation
 ├── DEPLOYMENT.md               # Deployment guide
-└── TESTING.md                  # Testing documentation
+├── TESTING.md                  # Testing documentation
+├── requirements.txt            # Python dependencies
+├── robots.txt                  # SEO robots.txt
+└── sitemaps.py                 # SEO sitemap configuration
 ```
 
 ---
